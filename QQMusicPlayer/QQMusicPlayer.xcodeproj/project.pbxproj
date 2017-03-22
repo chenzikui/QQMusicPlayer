@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0653008112EDAB3F69FB42DB /* libPods-QQMusicPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 362228902245717D879C217C /* libPods-QQMusicPlayer.a */; };
+		E7D0A33B1E7FC2080020F579 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A33A1E7FC2080020F579 /* main.m */; };
+		E7D0A33E1E7FC2080020F579 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A33D1E7FC2080020F579 /* AppDelegate.m */; };
+		E7D0A3411E7FC2080020F579 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3401E7FC2080020F579 /* ViewController.m */; };
+		E7D0A3441E7FC2080020F579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3421E7FC2080020F579 /* Main.storyboard */; };
+		E7D0A3461E7FC2080020F579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3451E7FC2080020F579 /* Assets.xcassets */; };
+		E7D0A3491E7FC2080020F579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3471E7FC2080020F579 /* LaunchScreen.storyboard */; };
+		E7D0A3581E7FC9CB0020F579 /* MainBaseNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3521E7FC9CB0020F579 /* MainBaseNetworkRequest.m */; };
+		E7D0A3591E7FC9CB0020F579 /* GiFHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3561E7FC9CB0020F579 /* GiFHUD.m */; };
+		E7D0A35A1E7FC9CB0020F579 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3571E7FC9CB0020F579 /* loading.gif */; };
+		E7D0A3601E7FCB390020F579 /* QQMusicNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A35F1E7FCB390020F579 /* QQMusicNetworkRequest.m */; };
+		E7D0A3741E822B010020F579 /* MusicListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3731E822B010020F579 /* MusicListTableViewController.m */; };
+		E7D0A3941E822E2E0020F579 /* AudioPlayerController+methods.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3781E822E2E0020F579 /* AudioPlayerController+methods.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E7D0A3951E822E2E0020F579 /* AudioPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A37A1E822E2E0020F579 /* AudioPlayerController.m */; };
+		E7D0A3961E822E2E0020F579 /* AudioPlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A37B1E822E2E0020F579 /* AudioPlayerController.xib */; };
+		E7D0A3971E822E2E0020F579 /* MusicPlayer_上一个@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A37D1E822E2E0020F579 /* MusicPlayer_上一个@2x.png */; };
+		E7D0A3981E822E2E0020F579 /* MusicPlayer_下一个@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A37E1E822E2E0020F579 /* MusicPlayer_下一个@2x.png */; };
+		E7D0A3991E822E2E0020F579 /* MusicPlayer_下载@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A37F1E822E2E0020F579 /* MusicPlayer_下载@2x.png */; };
+		E7D0A39A1E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3801E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png */; };
+		E7D0A39B1E822E2E0020F579 /* MusicPlayer_后退@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3811E822E2E0020F579 /* MusicPlayer_后退@2x.png */; };
+		E7D0A39C1E822E2E0020F579 /* MusicPlayer_播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3821E822E2E0020F579 /* MusicPlayer_播放@2x.png */; };
+		E7D0A39D1E822E2E0020F579 /* MusicPlayer_暂停@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3831E822E2E0020F579 /* MusicPlayer_暂停@2x.png */; };
+		E7D0A39E1E822E2E0020F579 /* MusicPlayer_随机播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3841E822E2E0020F579 /* MusicPlayer_随机播放@2x.png */; };
+		E7D0A39F1E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3851E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png */; };
+		E7D0A3A01E822E2E0020F579 /* Slider_控制点@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3861E822E2E0020F579 /* Slider_控制点@2x.png */; };
+		E7D0A3A11E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3871E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png */; };
+		E7D0A3A21E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3881E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png */; };
+		E7D0A3A31E822E2E0020F579 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A38B1E822E2E0020F579 /* MusicModel.m */; };
+		E7D0A3A41E822E2E0020F579 /* NSString+time.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A38E1E822E2E0020F579 /* NSString+time.m */; };
+		E7D0A3A51E822E2E0020F579 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3901E822E2E0020F579 /* UIImage+ImageEffects.m */; };
+		E7D0A3A61E822E2E0020F579 /* RotatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3931E822E2E0020F579 /* RotatingView.m */; };
+		E7D0A3AD1E8259D40020F579 /* ShowAPI_MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3AC1E8259D40020F579 /* ShowAPI_MusicModel.m */; };
+		E7D0A3B11E82633E0020F579 /* MusicListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3B01E82633E0020F579 /* MusicListTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2BB18844C4F4F97C38D37E7B /* Pods-QQMusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQMusicPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQMusicPlayer/Pods-QQMusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		362228902245717D879C217C /* libPods-QQMusicPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QQMusicPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EB98242396ACAD05C02DC8 /* Pods-QQMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQMusicPlayer/Pods-QQMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		E7D0A3361E7FC2080020F579 /* QQMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7D0A33A1E7FC2080020F579 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E7D0A33C1E7FC2080020F579 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E7D0A33D1E7FC2080020F579 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E7D0A33F1E7FC2080020F579 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E7D0A3401E7FC2080020F579 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E7D0A3431E7FC2080020F579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7D0A3451E7FC2080020F579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7D0A3481E7FC2080020F579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E7D0A34A1E7FC2080020F579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7D0A3511E7FC9CB0020F579 /* MainBaseNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBaseNetworkRequest.h; sourceTree = "<group>"; };
+		E7D0A3521E7FC9CB0020F579 /* MainBaseNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBaseNetworkRequest.m; sourceTree = "<group>"; };
+		E7D0A3531E7FC9CB0020F579 /* MainRequestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRequestAPI.h; sourceTree = "<group>"; };
+		E7D0A3551E7FC9CB0020F579 /* GiFHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiFHUD.h; sourceTree = "<group>"; };
+		E7D0A3561E7FC9CB0020F579 /* GiFHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiFHUD.m; sourceTree = "<group>"; };
+		E7D0A3571E7FC9CB0020F579 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		E7D0A35E1E7FCB390020F579 /* QQMusicNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QQMusicNetworkRequest.h; path = ../QQMusicNetworkRequest.h; sourceTree = "<group>"; };
+		E7D0A35F1E7FCB390020F579 /* QQMusicNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QQMusicNetworkRequest.m; path = ../QQMusicNetworkRequest.m; sourceTree = "<group>"; };
+		E7D0A3721E822B010020F579 /* MusicListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListTableViewController.h; sourceTree = "<group>"; };
+		E7D0A3731E822B010020F579 /* MusicListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListTableViewController.m; sourceTree = "<group>"; };
+		E7D0A3771E822E2E0020F579 /* AudioPlayerController+methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AudioPlayerController+methods.h"; sourceTree = "<group>"; };
+		E7D0A3781E822E2E0020F579 /* AudioPlayerController+methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AudioPlayerController+methods.m"; sourceTree = "<group>"; };
+		E7D0A3791E822E2E0020F579 /* AudioPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerController.h; sourceTree = "<group>"; };
+		E7D0A37A1E822E2E0020F579 /* AudioPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerController.m; sourceTree = "<group>"; };
+		E7D0A37B1E822E2E0020F579 /* AudioPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioPlayerController.xib; sourceTree = "<group>"; };
+		E7D0A37D1E822E2E0020F579 /* MusicPlayer_上一个@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_上一个@2x.png"; sourceTree = "<group>"; };
+		E7D0A37E1E822E2E0020F579 /* MusicPlayer_下一个@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_下一个@2x.png"; sourceTree = "<group>"; };
+		E7D0A37F1E822E2E0020F579 /* MusicPlayer_下载@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_下载@2x.png"; sourceTree = "<group>"; };
+		E7D0A3801E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_单曲循环@2x.png"; sourceTree = "<group>"; };
+		E7D0A3811E822E2E0020F579 /* MusicPlayer_后退@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_后退@2x.png"; sourceTree = "<group>"; };
+		E7D0A3821E822E2E0020F579 /* MusicPlayer_播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_播放@2x.png"; sourceTree = "<group>"; };
+		E7D0A3831E822E2E0020F579 /* MusicPlayer_暂停@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_暂停@2x.png"; sourceTree = "<group>"; };
+		E7D0A3841E822E2E0020F579 /* MusicPlayer_随机播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_随机播放@2x.png"; sourceTree = "<group>"; };
+		E7D0A3851E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_顺序播放@2x.png"; sourceTree = "<group>"; };
+		E7D0A3861E822E2E0020F579 /* Slider_控制点@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slider_控制点@2x.png"; sourceTree = "<group>"; };
+		E7D0A3871E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "音乐_播放器_默认唱片头像@2x.png"; sourceTree = "<group>"; };
+		E7D0A3881E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "音乐_播放器_默认模糊背景@2x.png"; sourceTree = "<group>"; };
+		E7D0A38A1E822E2E0020F579 /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
+		E7D0A38B1E822E2E0020F579 /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
+		E7D0A38D1E822E2E0020F579 /* NSString+time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+time.h"; sourceTree = "<group>"; };
+		E7D0A38E1E822E2E0020F579 /* NSString+time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+time.m"; sourceTree = "<group>"; };
+		E7D0A38F1E822E2E0020F579 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		E7D0A3901E822E2E0020F579 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		E7D0A3921E822E2E0020F579 /* RotatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatingView.h; sourceTree = "<group>"; };
+		E7D0A3931E822E2E0020F579 /* RotatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatingView.m; sourceTree = "<group>"; };
+		E7D0A3A81E8252B00020F579 /* MusicHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicHeader.h; sourceTree = "<group>"; };
+		E7D0A3AB1E8259D40020F579 /* ShowAPI_MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAPI_MusicModel.h; sourceTree = "<group>"; };
+		E7D0A3AC1E8259D40020F579 /* ShowAPI_MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAPI_MusicModel.m; sourceTree = "<group>"; };
+		E7D0A3AF1E82633E0020F579 /* MusicListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListTableViewCell.h; sourceTree = "<group>"; };
+		E7D0A3B01E82633E0020F579 /* MusicListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListTableViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7D0A3331E7FC2080020F579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0653008112EDAB3F69FB42DB /* libPods-QQMusicPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45ED8B40E6DC67F51E400F8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				362228902245717D879C217C /* libPods-QQMusicPlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7D0A32D1E7FC2080020F579 = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3381E7FC2080020F579 /* QQMusicPlayer */,
+				E7D0A3371E7FC2080020F579 /* Products */,
+				F4B76AC17A53D499DAF565B1 /* Pods */,
+				45ED8B40E6DC67F51E400F8F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E7D0A3371E7FC2080020F579 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3361E7FC2080020F579 /* QQMusicPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7D0A3381E7FC2080020F579 /* QQMusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3751E822E2E0020F579 /* Player */,
+				E7D0A3501E7FC9CB0020F579 /* BaseNetWork */,
+				E7D0A35D1E7FCAFD0020F579 /* Class */,
+				E7D0A33C1E7FC2080020F579 /* AppDelegate.h */,
+				E7D0A33D1E7FC2080020F579 /* AppDelegate.m */,
+				E7D0A33F1E7FC2080020F579 /* ViewController.h */,
+				E7D0A3401E7FC2080020F579 /* ViewController.m */,
+				E7D0A3421E7FC2080020F579 /* Main.storyboard */,
+				E7D0A3451E7FC2080020F579 /* Assets.xcassets */,
+				E7D0A3471E7FC2080020F579 /* LaunchScreen.storyboard */,
+				E7D0A34A1E7FC2080020F579 /* Info.plist */,
+				E7D0A3391E7FC2080020F579 /* Supporting Files */,
+			);
+			path = QQMusicPlayer;
+			sourceTree = "<group>";
+		};
+		E7D0A3391E7FC2080020F579 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A33A1E7FC2080020F579 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7D0A3501E7FC9CB0020F579 /* BaseNetWork */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3541E7FC9CB0020F579 /* DHBGIFHUD */,
+				E7D0A3511E7FC9CB0020F579 /* MainBaseNetworkRequest.h */,
+				E7D0A3521E7FC9CB0020F579 /* MainBaseNetworkRequest.m */,
+				E7D0A3531E7FC9CB0020F579 /* MainRequestAPI.h */,
+			);
+			name = BaseNetWork;
+			path = "封装";
+			sourceTree = "<group>";
+		};
+		E7D0A3541E7FC9CB0020F579 /* DHBGIFHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3551E7FC9CB0020F579 /* GiFHUD.h */,
+				E7D0A3561E7FC9CB0020F579 /* GiFHUD.m */,
+				E7D0A3571E7FC9CB0020F579 /* loading.gif */,
+			);
+			name = DHBGIFHUD;
+			path = ../DHBGIFHUD;
+			sourceTree = "<group>";
+		};
+		E7D0A35D1E7FCAFD0020F579 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3681E8228E60020F579 /* controller */,
+				E7D0A3AE1E8262FB0020F579 /* view */,
+				E7D0A3AA1E8259860020F579 /* model */,
+				E7D0A3671E8228B50020F579 /* network */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		E7D0A3671E8228B50020F579 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A35E1E7FCB390020F579 /* QQMusicNetworkRequest.h */,
+				E7D0A35F1E7FCB390020F579 /* QQMusicNetworkRequest.m */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		E7D0A3681E8228E60020F579 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3721E822B010020F579 /* MusicListTableViewController.h */,
+				E7D0A3731E822B010020F579 /* MusicListTableViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		E7D0A3751E822E2E0020F579 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3761E822E2E0020F579 /* Controller */,
+				E7D0A37C1E822E2E0020F579 /* Image */,
+				E7D0A3891E822E2E0020F579 /* Model */,
+				E7D0A38C1E822E2E0020F579 /* Tools */,
+				E7D0A3911E822E2E0020F579 /* View */,
+				E7D0A3A81E8252B00020F579 /* MusicHeader.h */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		E7D0A3761E822E2E0020F579 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3771E822E2E0020F579 /* AudioPlayerController+methods.h */,
+				E7D0A3781E822E2E0020F579 /* AudioPlayerController+methods.m */,
+				E7D0A3791E822E2E0020F579 /* AudioPlayerController.h */,
+				E7D0A37A1E822E2E0020F579 /* AudioPlayerController.m */,
+				E7D0A37B1E822E2E0020F579 /* AudioPlayerController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E7D0A37C1E822E2E0020F579 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A37D1E822E2E0020F579 /* MusicPlayer_上一个@2x.png */,
+				E7D0A37E1E822E2E0020F579 /* MusicPlayer_下一个@2x.png */,
+				E7D0A37F1E822E2E0020F579 /* MusicPlayer_下载@2x.png */,
+				E7D0A3801E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png */,
+				E7D0A3811E822E2E0020F579 /* MusicPlayer_后退@2x.png */,
+				E7D0A3821E822E2E0020F579 /* MusicPlayer_播放@2x.png */,
+				E7D0A3831E822E2E0020F579 /* MusicPlayer_暂停@2x.png */,
+				E7D0A3841E822E2E0020F579 /* MusicPlayer_随机播放@2x.png */,
+				E7D0A3851E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png */,
+				E7D0A3861E822E2E0020F579 /* Slider_控制点@2x.png */,
+				E7D0A3871E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png */,
+				E7D0A3881E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		E7D0A3891E822E2E0020F579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A38A1E822E2E0020F579 /* MusicModel.h */,
+				E7D0A38B1E822E2E0020F579 /* MusicModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E7D0A38C1E822E2E0020F579 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A38D1E822E2E0020F579 /* NSString+time.h */,
+				E7D0A38E1E822E2E0020F579 /* NSString+time.m */,
+				E7D0A38F1E822E2E0020F579 /* UIImage+ImageEffects.h */,
+				E7D0A3901E822E2E0020F579 /* UIImage+ImageEffects.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		E7D0A3911E822E2E0020F579 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3921E822E2E0020F579 /* RotatingView.h */,
+				E7D0A3931E822E2E0020F579 /* RotatingView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7D0A3AA1E8259860020F579 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3AB1E8259D40020F579 /* ShowAPI_MusicModel.h */,
+				E7D0A3AC1E8259D40020F579 /* ShowAPI_MusicModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		E7D0A3AE1E8262FB0020F579 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0A3AF1E82633E0020F579 /* MusicListTableViewCell.h */,
+				E7D0A3B01E82633E0020F579 /* MusicListTableViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F4B76AC17A53D499DAF565B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78EB98242396ACAD05C02DC8 /* Pods-QQMusicPlayer.debug.xcconfig */,
+				2BB18844C4F4F97C38D37E7B /* Pods-QQMusicPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7D0A3351E7FC2080020F579 /* QQMusicPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7D0A34D1E7FC2080020F579 /* Build configuration list for PBXNativeTarget "QQMusicPlayer" */;
+			buildPhases = (
+				019E680F0A234BCA6CE32D65 /* [CP] Check Pods Manifest.lock */,
+				E7D0A3321E7FC2080020F579 /* Sources */,
+				E7D0A3331E7FC2080020F579 /* Frameworks */,
+				E7D0A3341E7FC2080020F579 /* Resources */,
+				56E0D1A4DB4B6EA484816201 /* [CP] Embed Pods Frameworks */,
+				77D578D41AD13B5F4167594B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QQMusicPlayer;
+			productName = QQMusicPlayer;
+			productReference = E7D0A3361E7FC2080020F579 /* QQMusicPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7D0A32E1E7FC2080020F579 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Chen, ZiKui";
+				TargetAttributes = {
+					E7D0A3351E7FC2080020F579 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = C6J8T6SJPD;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E7D0A3311E7FC2080020F579 /* Build configuration list for PBXProject "QQMusicPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E7D0A32D1E7FC2080020F579;
+			productRefGroup = E7D0A3371E7FC2080020F579 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7D0A3351E7FC2080020F579 /* QQMusicPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7D0A3341E7FC2080020F579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7D0A39C1E822E2E0020F579 /* MusicPlayer_播放@2x.png in Resources */,
+				E7D0A3961E822E2E0020F579 /* AudioPlayerController.xib in Resources */,
+				E7D0A3491E7FC2080020F579 /* LaunchScreen.storyboard in Resources */,
+				E7D0A39E1E822E2E0020F579 /* MusicPlayer_随机播放@2x.png in Resources */,
+				E7D0A35A1E7FC9CB0020F579 /* loading.gif in Resources */,
+				E7D0A3461E7FC2080020F579 /* Assets.xcassets in Resources */,
+				E7D0A39D1E822E2E0020F579 /* MusicPlayer_暂停@2x.png in Resources */,
+				E7D0A39F1E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png in Resources */,
+				E7D0A3971E822E2E0020F579 /* MusicPlayer_上一个@2x.png in Resources */,
+				E7D0A39A1E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png in Resources */,
+				E7D0A3441E7FC2080020F579 /* Main.storyboard in Resources */,
+				E7D0A39B1E822E2E0020F579 /* MusicPlayer_后退@2x.png in Resources */,
+				E7D0A3A11E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png in Resources */,
+				E7D0A3A01E822E2E0020F579 /* Slider_控制点@2x.png in Resources */,
+				E7D0A3981E822E2E0020F579 /* MusicPlayer_下一个@2x.png in Resources */,
+				E7D0A3A21E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png in Resources */,
+				E7D0A3991E822E2E0020F579 /* MusicPlayer_下载@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		019E680F0A234BCA6CE32D65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		56E0D1A4DB4B6EA484816201 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQMusicPlayer/Pods-QQMusicPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77D578D41AD13B5F4167594B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQMusicPlayer/Pods-QQMusicPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7D0A3321E7FC2080020F579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7D0A3601E7FCB390020F579 /* QQMusicNetworkRequest.m in Sources */,
+				E7D0A3591E7FC9CB0020F579 /* GiFHUD.m in Sources */,
+				E7D0A3411E7FC2080020F579 /* ViewController.m in Sources */,
+				E7D0A3A61E822E2E0020F579 /* RotatingView.m in Sources */,
+				E7D0A3A41E822E2E0020F579 /* NSString+time.m in Sources */,
+				E7D0A33E1E7FC2080020F579 /* AppDelegate.m in Sources */,
+				E7D0A3951E822E2E0020F579 /* AudioPlayerController.m in Sources */,
+				E7D0A3941E822E2E0020F579 /* AudioPlayerController+methods.m in Sources */,
+				E7D0A3B11E82633E0020F579 /* MusicListTableViewCell.m in Sources */,
+				E7D0A3581E7FC9CB0020F579 /* MainBaseNetworkRequest.m in Sources */,
+				E7D0A3AD1E8259D40020F579 /* ShowAPI_MusicModel.m in Sources */,
+				E7D0A3A51E822E2E0020F579 /* UIImage+ImageEffects.m in Sources */,
+				E7D0A3A31E822E2E0020F579 /* MusicModel.m in Sources */,
+				E7D0A33B1E7FC2080020F579 /* main.m in Sources */,
+				E7D0A3741E822B010020F579 /* MusicListTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E7D0A3421E7FC2080020F579 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7D0A3431E7FC2080020F579 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E7D0A3471E7FC2080020F579 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7D0A3481E7FC2080020F579 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E7D0A34B1E7FC2080020F579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E7D0A34C1E7FC2080020F579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E7D0A34E1E7FC2080020F579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78EB98242396ACAD05C02DC8 /* Pods-QQMusicPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C6J8T6SJPD;
+				INFOPLIST_FILE = QQMusicPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zikui.Chen.QQMusicPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
+			};
+			name = Debug;
+		};
+		E7D0A34F1E7FC2080020F579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BB18844C4F4F97C38D37E7B /* Pods-QQMusicPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C6J8T6SJPD;
+				INFOPLIST_FILE = QQMusicPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zikui.Chen.QQMusicPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7D0A3311E7FC2080020F579 /* Build configuration list for PBXProject "QQMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7D0A34B1E7FC2080020F579 /* Debug */,
+				E7D0A34C1E7FC2080020F579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7D0A34D1E7FC2080020F579 /* Build configuration list for PBXNativeTarget "QQMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7D0A34E1E7FC2080020F579 /* Debug */,
+				E7D0A34F1E7FC2080020F579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E7D0A32E1E7FC2080020F579 /* Project object */;
+}
