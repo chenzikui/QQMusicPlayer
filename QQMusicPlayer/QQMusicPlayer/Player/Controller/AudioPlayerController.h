@@ -58,6 +58,11 @@ typedef NS_ENUM(NSInteger, AudioPlayerMode) {
 @property (strong, nonatomic) MBProgressHUD *HUD;
 
 /**
+ *  当前播放model
+ */
+@property (strong, nonatomic) MusicModel *currentModel;
+
+/**
  *  播放器数据传入
  *
  *  @param array 传入所有数据model数组

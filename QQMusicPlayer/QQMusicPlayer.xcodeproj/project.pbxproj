@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0653008112EDAB3F69FB42DB /* libPods-QQMusicPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 362228902245717D879C217C /* libPods-QQMusicPlayer.a */; };
+		E727A3941E84FDF70014D2A8 /* XMGLrcTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E727A3931E84FDF70014D2A8 /* XMGLrcTool.m */; };
+		E727A3971E84FE010014D2A8 /* XMGLrcline.m in Sources */ = {isa = PBXBuildFile; fileRef = E727A3961E84FE010014D2A8 /* XMGLrcline.m */; };
+		E727A39E1E84FE0D0014D2A8 /* XMGLrcView.m in Sources */ = {isa = PBXBuildFile; fileRef = E727A3991E84FE0D0014D2A8 /* XMGLrcView.m */; };
+		E727A39F1E84FE0D0014D2A8 /* XMGLrcCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E727A39B1E84FE0D0014D2A8 /* XMGLrcCell.m */; };
+		E727A3A01E84FE0D0014D2A8 /* XMGLrcLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E727A39D1E84FE0D0014D2A8 /* XMGLrcLabel.m */; };
+		E727A3A31E8517770014D2A8 /* QQMusicLrcNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E727A3A21E8517770014D2A8 /* QQMusicLrcNetworkRequest.m */; };
 		E7D0A33B1E7FC2080020F579 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A33A1E7FC2080020F579 /* main.m */; };
 		E7D0A33E1E7FC2080020F579 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A33D1E7FC2080020F579 /* AppDelegate.m */; };
 		E7D0A3411E7FC2080020F579 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3401E7FC2080020F579 /* ViewController.m */; };
@@ -25,12 +31,9 @@
 		E7D0A3971E822E2E0020F579 /* MusicPlayer_上一个@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A37D1E822E2E0020F579 /* MusicPlayer_上一个@2x.png */; };
 		E7D0A3981E822E2E0020F579 /* MusicPlayer_下一个@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A37E1E822E2E0020F579 /* MusicPlayer_下一个@2x.png */; };
 		E7D0A3991E822E2E0020F579 /* MusicPlayer_下载@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A37F1E822E2E0020F579 /* MusicPlayer_下载@2x.png */; };
-		E7D0A39A1E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3801E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png */; };
 		E7D0A39B1E822E2E0020F579 /* MusicPlayer_后退@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3811E822E2E0020F579 /* MusicPlayer_后退@2x.png */; };
 		E7D0A39C1E822E2E0020F579 /* MusicPlayer_播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3821E822E2E0020F579 /* MusicPlayer_播放@2x.png */; };
 		E7D0A39D1E822E2E0020F579 /* MusicPlayer_暂停@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3831E822E2E0020F579 /* MusicPlayer_暂停@2x.png */; };
-		E7D0A39E1E822E2E0020F579 /* MusicPlayer_随机播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3841E822E2E0020F579 /* MusicPlayer_随机播放@2x.png */; };
-		E7D0A39F1E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3851E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png */; };
 		E7D0A3A01E822E2E0020F579 /* Slider_控制点@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3861E822E2E0020F579 /* Slider_控制点@2x.png */; };
 		E7D0A3A11E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3871E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png */; };
 		E7D0A3A21E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D0A3881E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png */; };
@@ -38,14 +41,30 @@
 		E7D0A3A41E822E2E0020F579 /* NSString+time.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A38E1E822E2E0020F579 /* NSString+time.m */; };
 		E7D0A3A51E822E2E0020F579 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3901E822E2E0020F579 /* UIImage+ImageEffects.m */; };
 		E7D0A3A61E822E2E0020F579 /* RotatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3931E822E2E0020F579 /* RotatingView.m */; };
-		E7D0A3AD1E8259D40020F579 /* ShowAPI_MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3AC1E8259D40020F579 /* ShowAPI_MusicModel.m */; };
 		E7D0A3B11E82633E0020F579 /* MusicListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D0A3B01E82633E0020F579 /* MusicListTableViewCell.m */; };
+		E7DC28AC1E88F4EA005F5D07 /* MusicPlayer_顺序播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DC28A91E88F4EA005F5D07 /* MusicPlayer_顺序播放@2x.png */; };
+		E7DC28AD1E88F4EA005F5D07 /* MusicPlayer_单曲循环@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DC28AA1E88F4EA005F5D07 /* MusicPlayer_单曲循环@2x.png */; };
+		E7DC28AE1E88F4EA005F5D07 /* MusicPlayer_随机播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DC28AB1E88F4EA005F5D07 /* MusicPlayer_随机播放@2x.png */; };
+		E7DC28B01E88F5E9005F5D07 /* MusicPlayer_分享@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7DC28AF1E88F5E9005F5D07 /* MusicPlayer_分享@2x.png */; };
+		E7DC28B51E88FD12005F5D07 /* UIColor+SNFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7DC28B41E88FD12005F5D07 /* UIColor+SNFoundation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2BB18844C4F4F97C38D37E7B /* Pods-QQMusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQMusicPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQMusicPlayer/Pods-QQMusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		362228902245717D879C217C /* libPods-QQMusicPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QQMusicPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78EB98242396ACAD05C02DC8 /* Pods-QQMusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQMusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQMusicPlayer/Pods-QQMusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		E727A3921E84FDF70014D2A8 /* XMGLrcTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGLrcTool.h; sourceTree = "<group>"; };
+		E727A3931E84FDF70014D2A8 /* XMGLrcTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGLrcTool.m; sourceTree = "<group>"; };
+		E727A3951E84FE010014D2A8 /* XMGLrcline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGLrcline.h; sourceTree = "<group>"; };
+		E727A3961E84FE010014D2A8 /* XMGLrcline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGLrcline.m; sourceTree = "<group>"; };
+		E727A3981E84FE0D0014D2A8 /* XMGLrcView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGLrcView.h; sourceTree = "<group>"; };
+		E727A3991E84FE0D0014D2A8 /* XMGLrcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGLrcView.m; sourceTree = "<group>"; };
+		E727A39A1E84FE0D0014D2A8 /* XMGLrcCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGLrcCell.h; sourceTree = "<group>"; };
+		E727A39B1E84FE0D0014D2A8 /* XMGLrcCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGLrcCell.m; sourceTree = "<group>"; };
+		E727A39C1E84FE0D0014D2A8 /* XMGLrcLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGLrcLabel.h; sourceTree = "<group>"; };
+		E727A39D1E84FE0D0014D2A8 /* XMGLrcLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGLrcLabel.m; sourceTree = "<group>"; };
+		E727A3A11E8517770014D2A8 /* QQMusicLrcNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMusicLrcNetworkRequest.h; sourceTree = "<group>"; };
+		E727A3A21E8517770014D2A8 /* QQMusicLrcNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQMusicLrcNetworkRequest.m; sourceTree = "<group>"; };
 		E7D0A3361E7FC2080020F579 /* QQMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D0A33A1E7FC2080020F579 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E7D0A33C1E7FC2080020F579 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,12 +93,9 @@
 		E7D0A37D1E822E2E0020F579 /* MusicPlayer_上一个@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_上一个@2x.png"; sourceTree = "<group>"; };
 		E7D0A37E1E822E2E0020F579 /* MusicPlayer_下一个@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_下一个@2x.png"; sourceTree = "<group>"; };
 		E7D0A37F1E822E2E0020F579 /* MusicPlayer_下载@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_下载@2x.png"; sourceTree = "<group>"; };
-		E7D0A3801E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_单曲循环@2x.png"; sourceTree = "<group>"; };
 		E7D0A3811E822E2E0020F579 /* MusicPlayer_后退@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_后退@2x.png"; sourceTree = "<group>"; };
 		E7D0A3821E822E2E0020F579 /* MusicPlayer_播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_播放@2x.png"; sourceTree = "<group>"; };
 		E7D0A3831E822E2E0020F579 /* MusicPlayer_暂停@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_暂停@2x.png"; sourceTree = "<group>"; };
-		E7D0A3841E822E2E0020F579 /* MusicPlayer_随机播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_随机播放@2x.png"; sourceTree = "<group>"; };
-		E7D0A3851E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_顺序播放@2x.png"; sourceTree = "<group>"; };
 		E7D0A3861E822E2E0020F579 /* Slider_控制点@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slider_控制点@2x.png"; sourceTree = "<group>"; };
 		E7D0A3871E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "音乐_播放器_默认唱片头像@2x.png"; sourceTree = "<group>"; };
 		E7D0A3881E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "音乐_播放器_默认模糊背景@2x.png"; sourceTree = "<group>"; };
@@ -92,10 +108,14 @@
 		E7D0A3921E822E2E0020F579 /* RotatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatingView.h; sourceTree = "<group>"; };
 		E7D0A3931E822E2E0020F579 /* RotatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatingView.m; sourceTree = "<group>"; };
 		E7D0A3A81E8252B00020F579 /* MusicHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicHeader.h; sourceTree = "<group>"; };
-		E7D0A3AB1E8259D40020F579 /* ShowAPI_MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAPI_MusicModel.h; sourceTree = "<group>"; };
-		E7D0A3AC1E8259D40020F579 /* ShowAPI_MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAPI_MusicModel.m; sourceTree = "<group>"; };
 		E7D0A3AF1E82633E0020F579 /* MusicListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListTableViewCell.h; sourceTree = "<group>"; };
 		E7D0A3B01E82633E0020F579 /* MusicListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListTableViewCell.m; sourceTree = "<group>"; };
+		E7DC28A91E88F4EA005F5D07 /* MusicPlayer_顺序播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_顺序播放@2x.png"; sourceTree = "<group>"; };
+		E7DC28AA1E88F4EA005F5D07 /* MusicPlayer_单曲循环@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_单曲循环@2x.png"; sourceTree = "<group>"; };
+		E7DC28AB1E88F4EA005F5D07 /* MusicPlayer_随机播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_随机播放@2x.png"; sourceTree = "<group>"; };
+		E7DC28AF1E88F5E9005F5D07 /* MusicPlayer_分享@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_分享@2x.png"; sourceTree = "<group>"; };
+		E7DC28B31E88FD12005F5D07 /* UIColor+SNFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SNFoundation.h"; sourceTree = "<group>"; };
+		E7DC28B41E88FD12005F5D07 /* UIColor+SNFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SNFoundation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +222,8 @@
 			children = (
 				E7D0A35E1E7FCB390020F579 /* QQMusicNetworkRequest.h */,
 				E7D0A35F1E7FCB390020F579 /* QQMusicNetworkRequest.m */,
+				E727A3A11E8517770014D2A8 /* QQMusicLrcNetworkRequest.h */,
+				E727A3A21E8517770014D2A8 /* QQMusicLrcNetworkRequest.m */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -246,15 +268,16 @@
 				E7D0A37D1E822E2E0020F579 /* MusicPlayer_上一个@2x.png */,
 				E7D0A37E1E822E2E0020F579 /* MusicPlayer_下一个@2x.png */,
 				E7D0A37F1E822E2E0020F579 /* MusicPlayer_下载@2x.png */,
-				E7D0A3801E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png */,
 				E7D0A3811E822E2E0020F579 /* MusicPlayer_后退@2x.png */,
 				E7D0A3821E822E2E0020F579 /* MusicPlayer_播放@2x.png */,
 				E7D0A3831E822E2E0020F579 /* MusicPlayer_暂停@2x.png */,
-				E7D0A3841E822E2E0020F579 /* MusicPlayer_随机播放@2x.png */,
-				E7D0A3851E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png */,
 				E7D0A3861E822E2E0020F579 /* Slider_控制点@2x.png */,
 				E7D0A3871E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png */,
 				E7D0A3881E822E2E0020F579 /* 音乐_播放器_默认模糊背景@2x.png */,
+				E7DC28A91E88F4EA005F5D07 /* MusicPlayer_顺序播放@2x.png */,
+				E7DC28AA1E88F4EA005F5D07 /* MusicPlayer_单曲循环@2x.png */,
+				E7DC28AB1E88F4EA005F5D07 /* MusicPlayer_随机播放@2x.png */,
+				E7DC28AF1E88F5E9005F5D07 /* MusicPlayer_分享@2x.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -264,6 +287,10 @@
 			children = (
 				E7D0A38A1E822E2E0020F579 /* MusicModel.h */,
 				E7D0A38B1E822E2E0020F579 /* MusicModel.m */,
+				E727A3921E84FDF70014D2A8 /* XMGLrcTool.h */,
+				E727A3931E84FDF70014D2A8 /* XMGLrcTool.m */,
+				E727A3951E84FE010014D2A8 /* XMGLrcline.h */,
+				E727A3961E84FE010014D2A8 /* XMGLrcline.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,6 +302,8 @@
 				E7D0A38E1E822E2E0020F579 /* NSString+time.m */,
 				E7D0A38F1E822E2E0020F579 /* UIImage+ImageEffects.h */,
 				E7D0A3901E822E2E0020F579 /* UIImage+ImageEffects.m */,
+				E7DC28B31E88FD12005F5D07 /* UIColor+SNFoundation.h */,
+				E7DC28B41E88FD12005F5D07 /* UIColor+SNFoundation.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -284,6 +313,12 @@
 			children = (
 				E7D0A3921E822E2E0020F579 /* RotatingView.h */,
 				E7D0A3931E822E2E0020F579 /* RotatingView.m */,
+				E727A3981E84FE0D0014D2A8 /* XMGLrcView.h */,
+				E727A3991E84FE0D0014D2A8 /* XMGLrcView.m */,
+				E727A39A1E84FE0D0014D2A8 /* XMGLrcCell.h */,
+				E727A39B1E84FE0D0014D2A8 /* XMGLrcCell.m */,
+				E727A39C1E84FE0D0014D2A8 /* XMGLrcLabel.h */,
+				E727A39D1E84FE0D0014D2A8 /* XMGLrcLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,8 +326,6 @@
 		E7D0A3AA1E8259860020F579 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				E7D0A3AB1E8259D40020F579 /* ShowAPI_MusicModel.h */,
-				E7D0A3AC1E8259D40020F579 /* ShowAPI_MusicModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -351,6 +384,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = C6J8T6SJPD;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -377,16 +415,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7DC28B01E88F5E9005F5D07 /* MusicPlayer_分享@2x.png in Resources */,
 				E7D0A39C1E822E2E0020F579 /* MusicPlayer_播放@2x.png in Resources */,
+				E7DC28AD1E88F4EA005F5D07 /* MusicPlayer_单曲循环@2x.png in Resources */,
 				E7D0A3961E822E2E0020F579 /* AudioPlayerController.xib in Resources */,
 				E7D0A3491E7FC2080020F579 /* LaunchScreen.storyboard in Resources */,
-				E7D0A39E1E822E2E0020F579 /* MusicPlayer_随机播放@2x.png in Resources */,
+				E7DC28AC1E88F4EA005F5D07 /* MusicPlayer_顺序播放@2x.png in Resources */,
+				E7DC28AE1E88F4EA005F5D07 /* MusicPlayer_随机播放@2x.png in Resources */,
 				E7D0A35A1E7FC9CB0020F579 /* loading.gif in Resources */,
 				E7D0A3461E7FC2080020F579 /* Assets.xcassets in Resources */,
 				E7D0A39D1E822E2E0020F579 /* MusicPlayer_暂停@2x.png in Resources */,
-				E7D0A39F1E822E2E0020F579 /* MusicPlayer_顺序播放@2x.png in Resources */,
 				E7D0A3971E822E2E0020F579 /* MusicPlayer_上一个@2x.png in Resources */,
-				E7D0A39A1E822E2E0020F579 /* MusicPlayer_单曲循环@2x.png in Resources */,
 				E7D0A3441E7FC2080020F579 /* Main.storyboard in Resources */,
 				E7D0A39B1E822E2E0020F579 /* MusicPlayer_后退@2x.png in Resources */,
 				E7D0A3A11E822E2E0020F579 /* 音乐_播放器_默认唱片头像@2x.png in Resources */,
@@ -454,6 +493,7 @@
 			files = (
 				E7D0A3601E7FCB390020F579 /* QQMusicNetworkRequest.m in Sources */,
 				E7D0A3591E7FC9CB0020F579 /* GiFHUD.m in Sources */,
+				E727A3941E84FDF70014D2A8 /* XMGLrcTool.m in Sources */,
 				E7D0A3411E7FC2080020F579 /* ViewController.m in Sources */,
 				E7D0A3A61E822E2E0020F579 /* RotatingView.m in Sources */,
 				E7D0A3A41E822E2E0020F579 /* NSString+time.m in Sources */,
@@ -461,12 +501,17 @@
 				E7D0A3951E822E2E0020F579 /* AudioPlayerController.m in Sources */,
 				E7D0A3941E822E2E0020F579 /* AudioPlayerController+methods.m in Sources */,
 				E7D0A3B11E82633E0020F579 /* MusicListTableViewCell.m in Sources */,
+				E7DC28B51E88FD12005F5D07 /* UIColor+SNFoundation.m in Sources */,
 				E7D0A3581E7FC9CB0020F579 /* MainBaseNetworkRequest.m in Sources */,
-				E7D0A3AD1E8259D40020F579 /* ShowAPI_MusicModel.m in Sources */,
 				E7D0A3A51E822E2E0020F579 /* UIImage+ImageEffects.m in Sources */,
+				E727A39E1E84FE0D0014D2A8 /* XMGLrcView.m in Sources */,
+				E727A39F1E84FE0D0014D2A8 /* XMGLrcCell.m in Sources */,
 				E7D0A3A31E822E2E0020F579 /* MusicModel.m in Sources */,
 				E7D0A33B1E7FC2080020F579 /* main.m in Sources */,
+				E727A3A01E84FE0D0014D2A8 /* XMGLrcLabel.m in Sources */,
 				E7D0A3741E822B010020F579 /* MusicListTableViewController.m in Sources */,
+				E727A3971E84FE010014D2A8 /* XMGLrcline.m in Sources */,
+				E727A3A31E8517770014D2A8 /* QQMusicLrcNetworkRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

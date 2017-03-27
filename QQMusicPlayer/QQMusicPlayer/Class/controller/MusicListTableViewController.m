@@ -22,12 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.tableFooterView=[UIView new];
     
     self.service=[[QQMusicNetworkRequest alloc]init];
     __weak __typeof(&*self)weakSelf = self;
     [self.service requestData:^(BOOL isSucess) {
         if (isSucess) {
             [weakSelf.tableView reloadData];
+        }else{
+            NSLog(@"歌曲列表获取失败");
         }
     }];
 }
@@ -56,7 +59,7 @@
         cell=[[MusicListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:resuId];
     }
     
-    ShowAPI_MusicModel *model=self.service.datas[indexPath.row];
+    MusicModel *model=self.service.datas[indexPath.row];
     [cell setupDataWithModel:model];
     
     ////// 此步设置用于实现cell的frame缓存，可以让tableview滑动更加流畅 //////
@@ -89,6 +92,8 @@
     AudioPlayerController *audio = [AudioPlayerController audioPlayerController];
     [audio initWithArray:self.service.datas index:indexPath.row];
     [self presentViewController:audio animated:YES completion:nil];
+
+
 }
 
 

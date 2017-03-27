@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ShowAPI_MusicModel.h"
+#import "MusicModel.h"
 
 @interface MusicListTableViewCell : UITableViewCell
 
@@ -15,6 +15,6 @@
 @property(nonatomic,strong)UILabel *singerName;
 @property(nonatomic,strong)UILabel *songName;
 
--(void)setupDataWithModel:(ShowAPI_MusicModel *)model;
+-(void)setupDataWithModel:(MusicModel *)model;
 
 @end

@@ -9,10 +9,13 @@
 #import "AudioPlayerController.h"
 #import "AudioPlayerController+methods.h"
 #import "NSString+time.h"
+#import "XMGLrcLabel.h"
+#import "XMGLrcView.h"
+#import "QQMusicLrcNetworkRequest.h"
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
-@interface AudioPlayerController (){
+@interface AudioPlayerController ()<UIScrollViewDelegate>{
     AVPlayerItem *playerItem;
     id _playTimeObserver; // 播放进度观察者
     NSArray *_modelArray; // 歌曲数组
@@ -22,7 +25,7 @@
     BOOL isRemoveNot; // 是否移除通知
     AudioPlayerMode _playerMode; // 播放模式
 
-    MusicModel *_playingModel; // 正在播放的model
+//    MusicModel *_playingModel; // 正在播放的model
     CGFloat _totalTime; // 总时间
 }
 @property (weak, nonatomic) IBOutlet UISlider *paceSlider; // 进度条
@@ -32,6 +35,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *playingTime; // 当前播放时间Label
 @property (weak, nonatomic) IBOutlet UILabel *maxTime; // 总时间Label
 @property (weak, nonatomic) IBOutlet UIButton *modeButton; // 播放模式按钮
+@property (weak, nonatomic) IBOutlet XMGLrcLabel *lrcLabel;//歌词label
+/* 歌词的定时器 */
+@property (weak, nonatomic) IBOutlet XMGLrcView *lrcView;
+
+
+@property (nonatomic, strong) CADisplayLink *lrcTimer;
+
 @property (nonatomic, strong) AVPlayer *player;
 @end
 
@@ -56,7 +66,73 @@ static AudioPlayerController *audioVC;
     [super viewDidLoad];
     [self.paceSlider setThumbImage:[UIImage imageNamed:@"Slider_控制点"] forState:UIControlStateNormal];
     [self creatViews];
+    
+    
+    // 5.添加歌词的定时器
+    [self removeLrcTimer];
+    [self addLrcTimer];
+    
+    // 4.设置ScrollView的可滚动区域
+    self.lrcView.contentSize = CGSizeMake(self.view.frame.size.width * 2, 0);
+    self.lrcView.delegate=self;
+    self.lrcView.lrcLabel = self.lrcLabel;
+    [self.view bringSubviewToFront:self.lrcView];
+    
 }
+
+
+#pragma mark - 用于后台控制播放
+- (void)viewDidAppear:(BOOL)animated {
+    //    接受远程控制
+    [self becomeFirstResponder];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    //    取消远程控制
+    [self resignFirstResponder];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+}
+#pragma mark - 接收方法的设置
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    if (event.type == UIEventTypeRemoteControl) {  //判断是否为远程控制
+        switch (event.subtype) {
+            case  UIEventSubtypeRemoteControlPlay:
+            case UIEventSubtypeRemoteControlPause:
+                [self playAndPauseClick:nil];
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+                NSLog(@"下一首");
+                [self nextClick:nil];
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                NSLog(@"上一首 ");
+                [self previousClick:nil];
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+- (void)addLrcTimer
+{
+    [self updateLrc];
+    self.lrcTimer = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateLrc)];
+    [self.lrcTimer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+- (void)removeLrcTimer
+{
+    [self.lrcTimer invalidate];
+    self.lrcTimer = nil;
+}
+#pragma mark - 更新歌词
+- (void)updateLrc
+{
+    self.lrcView.currentTime =CMTimeGetSeconds(self.player.currentTime);
+}
+
 
 - (void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
@@ -68,6 +144,22 @@ static AudioPlayerController *audioVC;
     _modelArray = array;
     _randomArray = nil;
     [self updateAudioPlayer];
+
+}
+
+-(void)requestMusicLyric{
+    WS(weakSelf);
+    QQMusicLrcNetworkRequest *request=[[QQMusicLrcNetworkRequest alloc]init];
+    request.model=self.currentModel;
+    request.hidden_effect=YES;
+    [request requestData:^(BOOL isSucess) {
+        if (isSucess) {
+            weakSelf.lrcView.lrcName=request.lrc;
+        }else{
+            weakSelf.lrcView.lrcName=nil;
+            [weakSelf progressHUDWith:@"歌词获取失败"];
+        }
+    }];
 }
 
 - (void)updateAudioPlayer{
@@ -94,7 +186,7 @@ static AudioPlayerController *audioVC;
     }else{
         model = [_modelArray objectAtIndex:_index];
     }
-    _playingModel = model;
+    self.currentModel = model;
     // 更新界面歌曲信息：歌名，歌手，图片
     [self updateUIDataWith:model];
     
@@ -104,6 +196,8 @@ static AudioPlayerController *audioVC;
     [self monitoringPlayback:playerItem];// 监听播放状态
     [self addEndTimeNotification];
     isRemoveNot = YES;
+    
+    [self requestMusicLyric];
 }
 
 // 各控件设初始值
@@ -154,7 +248,7 @@ static AudioPlayerController *audioVC;
 }
 
 - (void)updateVideoSlider:(float)currentTime{
-    [self setLockViewWith:_playingModel currentTime:currentTime];
+    [self setLockViewWith:self.currentModel currentTime:currentTime];
     self.paceSlider.value = currentTime;
     self.playingTime.text = [NSString convertTime:currentTime];
 }
@@ -260,6 +354,7 @@ static AudioPlayerController *audioVC;
 }
 
 - (void)play{
+    
     isPlaying = YES;
     [self.player play];
     [self.playButton setImage:[UIImage imageNamed:@"MusicPlayer_播放"] forState:UIControlStateNormal];
@@ -277,9 +372,11 @@ static AudioPlayerController *audioVC;
 
 - (IBAction)downloadAction:(id)sender {
     NSLog(@"点击下载");
+    [self progressHUDWith:@"下载功能升级中...(>^ω^<)喵"];
 }
 - (IBAction)rightButtonAction:(id)sender {
     NSLog(@"分享");
+    [self progressHUDWith:@"分享功能升级中...(>^ω^<)喵"];
 }
 
 #pragma mark - 移除通知&KVO
@@ -291,7 +388,7 @@ static AudioPlayerController *audioVC;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 }
 
-#pragma mark - 后台UI设置
+#pragma mark - 后台UI设置,后台播放音乐时展示的锁屏UI
 - (void)setLockViewWith:(MusicModel*)model currentTime:(CGFloat)currentTime
 {
     NSMutableDictionary *musicInfo = [NSMutableDictionary dictionary];
@@ -310,9 +407,17 @@ static AudioPlayerController *audioVC;
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:musicInfo];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 实现UIScrollView的代理方法
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // 1.获取滚动的区域
+    CGFloat scrollX = scrollView.contentOffset.x;
+    
+    // 2.计算滚动的比例
+    CGFloat alpha = 1 - scrollX / scrollView.bounds.size.width;
+    
+    // 3.设置内容的透明度
+    self.rotatingView.alpha = alpha;
+    self.lrcLabel.alpha = alpha;
 }
-
 @end

@@ -75,7 +75,7 @@
     [self.singerName setFrame:CGRectMake(orgin_x+image_h+5, orgin_y+label_h, 250, label_h)];
 }
 
--(void)setupDataWithModel:(ShowAPI_MusicModel *)model{
+-(void)setupDataWithModel:(MusicModel *)model{
     
     [self.songImage sd_setImageWithURL:[NSURL URLWithString:model.albumpic_small] placeholderImage:nil];
     self.songName.text=model.songname;

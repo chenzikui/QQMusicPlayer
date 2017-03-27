@@ -7,7 +7,7 @@
 //
 
 #import "QQMusicNetworkRequest.h"
-#import "ShowAPI_MusicModel.h"
+#import "MusicModel.h"
 
 @implementation QQMusicNetworkRequest
 -(NSMutableArray *)datas{
@@ -19,7 +19,6 @@
 }
 
 -(void)requestData:(void (^)(BOOL))block{
-    __weak __typeof(&*self)weakSelf = self;
     [self postDataSuccess:^(MainBaseNetworkRequest *DAO, id data) {
         
         NSDictionary *dic=data;
@@ -32,12 +31,12 @@
             NSArray *songlist=pagebean[@"songlist"];
             NSMutableArray *dataArr=[NSMutableArray new];
             for (NSDictionary *dict in songlist) {
-                ShowAPI_MusicModel *model=[[ShowAPI_MusicModel alloc]init];
+                MusicModel *model=[[MusicModel alloc]init];
                 [model setupModelWithDictionary:dict];
                 [dataArr addObject:model];
             }
-            //随机数组内容
-            self.datas=[self randomizedArrayWithArray:dataArr];
+
+            self.datas=dataArr;
             
             block(YES);
         }else{
@@ -53,17 +52,7 @@
     
 }
 
-//随机数组内容
-- (NSMutableArray *) randomizedArrayWithArray:(NSArray *)array {
-    
-    NSMutableArray *results = [[NSMutableArray alloc]initWithArray:array];
-    long i = [results count];
-    while(--i > 0) {
-        int j = rand() % (i+1);
-        [results exchangeObjectAtIndex:i withObjectAtIndex:j];
-    }
-    return results;
-}
+
 
 -(NSString *)interfaceName{
     
