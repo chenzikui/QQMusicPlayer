@@ -144,14 +144,18 @@ static NSTimeInterval defaultTimeoutInterval = 10;
         
         [[[UIApplication sharedApplication] keyWindow] setUserInteractionEnabled: YES];
         //隐藏“数据加载”视图
-        if (!self.hidden_effect) [GiFHUD dismiss];
+        if (!self.hidden_effect){
+            [GiFHUD dismiss];
+        }
         ////第三步：返回结果的验证
         if([self returnDataValidate: responseObject]) {
             if (success) success(self, responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        if (!self.hidden_effect) [GiFHUD dismiss];
+        if (!self.hidden_effect){
+            [GiFHUD dismiss];
+        }
         [[[UIApplication sharedApplication] keyWindow] setUserInteractionEnabled: YES];
         if (failure) {
             failure(self, error);
@@ -287,6 +291,15 @@ static NSTimeInterval defaultTimeoutInterval = 10;
     [val setValue:@"33861" forKey:@"showapi_appid"];
     [val setValue:@"9842e8b743e244dbbf8742a1c23fa045" forKey:@"showapi_sign"];
     
+    //获取系统当前时间
+    NSDate *currentDate = [NSDate date];
+    //用于格式化NSDate对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设置格式：zzz表示时区
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    //NSDate转NSString
+    NSString *currentDateString = [dateFormatter stringFromDate:currentDate];
+    [val setValue:currentDateString forKey:@"showapi_timestamp"];
     
     return val;
 }
@@ -301,7 +314,15 @@ static NSTimeInterval defaultTimeoutInterval = 10;
      */
     [val setValue:@"33861" forKey:@"showapi_appid"];
     [val setValue:@"9842e8b743e244dbbf8742a1c23fa045" forKey:@"showapi_sign"];
-    
+    //获取系统当前时间
+    NSDate *currentDate = [NSDate date];
+    //用于格式化NSDate对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设置格式：zzz表示时区
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    //NSDate转NSString
+    NSString *currentDateString = [dateFormatter stringFromDate:currentDate];
+    [val setValue:currentDateString forKey:@"showapi_timestamp"];
     return val;
 }
 
@@ -360,10 +381,10 @@ static NSTimeInterval defaultTimeoutInterval = 10;
 //    [[NSNotificationCenter defaultCenter] postNotificationName:RLRequestAuthorizationErrorMessage object:nil];
 }
 
-- (void)dealloc{
+//- (void)dealloc{
     /**
      *  当self对象销毁时，要将defaultManager(数据请求对象)清空，不然会成为野指针，引起崩溃
      */
-    defaultManager = nil;
-}
+//    defaultManager = nil;
+//}
 @end

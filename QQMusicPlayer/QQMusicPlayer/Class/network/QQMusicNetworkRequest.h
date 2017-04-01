@@ -11,6 +11,7 @@
 
 @interface QQMusicNetworkRequest : MainBaseNetworkRequest
 
+@property(nonatomic,strong)NSString *topId;
 @property(nonatomic,strong)NSMutableArray *datas;
 
 -(void)requestData:(void(^)(BOOL isSucess))block;

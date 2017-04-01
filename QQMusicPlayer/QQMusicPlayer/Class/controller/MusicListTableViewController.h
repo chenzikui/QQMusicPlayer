@@ -10,4 +10,7 @@
 
 @interface MusicListTableViewController : UITableViewController
 
+@property(nonatomic,strong)NSString *topId;
+@property(nonatomic,strong)NSMutableArray *listDatas;
+
 @end

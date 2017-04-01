@@ -166,7 +166,7 @@
                         </label>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="253-s6-NbK">
                             <rect key="frame" x="58" y="0.0" width="259" height="17"/>
-                            <color key="minimumTrackTintColor" red="0.13333333333333333" green="0.54509803921568623" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="minimumTrackTintColor" red="0.14901960784313725" green="0.61568627450980395" blue="0.35294117647058826" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="maximumTrackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="changeSlider:" destination="-1" eventType="valueChanged" id="q4x-Rb-haL"/>

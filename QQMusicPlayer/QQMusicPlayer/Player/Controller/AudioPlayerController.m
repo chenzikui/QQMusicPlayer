@@ -43,6 +43,7 @@
 @property (nonatomic, strong) CADisplayLink *lrcTimer;
 
 @property (nonatomic, strong) AVPlayer *player;
+
 @end
 
 static AudioPlayerController *audioVC;
@@ -62,6 +63,8 @@ static AudioPlayerController *audioVC;
     return audioVC;
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.paceSlider setThumbImage:[UIImage imageNamed:@"Slider_控制点"] forState:UIControlStateNormal];
@@ -78,23 +81,15 @@ static AudioPlayerController *audioVC;
     self.lrcView.lrcLabel = self.lrcLabel;
     [self.view bringSubviewToFront:self.lrcView];
     
+    //添加后台控制监控者
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didBackgroundPlayerEvent:) name:@"BackgroundPlayerEvent" object:nil];
+    
+    
 }
 
+-(void)didBackgroundPlayerEvent:(NSNotification *)notification{
 
-#pragma mark - 用于后台控制播放
-- (void)viewDidAppear:(BOOL)animated {
-    //    接受远程控制
-    [self becomeFirstResponder];
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    //    取消远程控制
-    [self resignFirstResponder];
-    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-}
-#pragma mark - 接收方法的设置
-- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    UIEvent *event=[notification object];
     if (event.type == UIEventTypeRemoteControl) {  //判断是否为远程控制
         switch (event.subtype) {
             case  UIEventSubtypeRemoteControlPlay:
@@ -114,6 +109,49 @@ static AudioPlayerController *audioVC;
         }
     }
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showMucicButtonOnScreen" object:@{@"isShowMusic":@(NO)}];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"showMucicButtonOnScreen" object:@{@"isShowMusic":@(YES)}];
+}
+
+
+//#pragma mark - 用于后台控制播放
+//- (void)viewDidAppear:(BOOL)animated {
+//    //    接受远程控制
+//    [self becomeFirstResponder];
+//    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated {
+//    //    取消远程控制
+//    [self resignFirstResponder];
+//    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+//}
+//#pragma mark - 接收方法的设置
+//- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+//    if (event.type == UIEventTypeRemoteControl) {  //判断是否为远程控制
+//        switch (event.subtype) {
+//            case  UIEventSubtypeRemoteControlPlay:
+//            case UIEventSubtypeRemoteControlPause:
+//                [self playAndPauseClick:nil];
+//                break;
+//            case UIEventSubtypeRemoteControlNextTrack:
+//                NSLog(@"下一首");
+//                [self nextClick:nil];
+//                break;
+//            case UIEventSubtypeRemoteControlPreviousTrack:
+//                NSLog(@"上一首 ");
+//                [self previousClick:nil];
+//                break;
+//            default:
+//                break;
+//        }
+//    }
+//}
+
 
 - (void)addLrcTimer
 {
@@ -197,7 +235,10 @@ static AudioPlayerController *audioVC;
     [self addEndTimeNotification];
     isRemoveNot = YES;
     
+    self.lrcLabel.text=@"";
     [self requestMusicLyric];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ChangeMucicButtonImage" object:@{@"img_url":self.currentModel.icon}];
 }
 
 // 各控件设初始值

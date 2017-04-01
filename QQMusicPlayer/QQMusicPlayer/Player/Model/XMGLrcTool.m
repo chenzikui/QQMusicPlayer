@@ -54,6 +54,9 @@
 + (NSTimeInterval)timeWithString:(NSString *)timeString
 {
     NSInteger min = [[timeString componentsSeparatedByString:@":"][0] integerValue];
+    if ([timeString componentsSeparatedByString:@"."].count<2) {
+        return 0.00;
+    }
     NSInteger second = [[[timeString componentsSeparatedByString:@"."][0] componentsSeparatedByString:@":"][1] integerValue];
     NSInteger haomiao = [[timeString componentsSeparatedByString:@"."][1] integerValue];
     

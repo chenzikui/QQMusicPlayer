@@ -61,7 +61,7 @@
 
 -(id)value{
     
-    return @{@"topid":@"5"};
+    return @{@"topid":self.topId};
 }
 
 

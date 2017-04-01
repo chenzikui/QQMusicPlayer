@@ -12,8 +12,12 @@
 
 @property (nonatomic, strong) UIImageView *imageView;
 
+
+//图片带边框
 - (void)setRotatingViewLayoutWithFrame:(CGRect)frame;
 
+//图片不带边框
+- (void)setRotatingViewLayoutWithNoBorderFrame:(CGRect)frame;
 // 添加动画
 - (void)addAnimation;
 // 停止

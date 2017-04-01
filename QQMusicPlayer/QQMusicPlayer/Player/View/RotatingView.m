@@ -29,6 +29,10 @@
     self.imageView.layer.masksToBounds = YES;
     self.imageView.layer.cornerRadius = CGRectGetWidth(self.imageView.frame)/2.f;
 }
+- (void)setRotatingViewLayoutWithNoBorderFrame:(CGRect)frame{
+
+    self.imageView.frame = CGRectMake(0, 0, frame.size.width, frame.size.width);
+}
 
 /// 添加动画
 - (void)addAnimation{

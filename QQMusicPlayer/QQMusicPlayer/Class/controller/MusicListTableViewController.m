@@ -15,6 +15,7 @@
 @interface MusicListTableViewController ()
 
 @property(nonatomic,strong)QQMusicNetworkRequest *service;
+@property(nonatomic,strong)NSMutableArray *datas;
 
 @end
 
@@ -24,15 +25,23 @@
     [super viewDidLoad];
     self.tableView.tableFooterView=[UIView new];
     
+    
+    
     self.service=[[QQMusicNetworkRequest alloc]init];
+    self.service.topId=self.topId;
     __weak __typeof(&*self)weakSelf = self;
     [self.service requestData:^(BOOL isSucess) {
         if (isSucess) {
+            weakSelf.datas=weakSelf.service.datas;
             [weakSelf.tableView reloadData];
         }else{
             NSLog(@"歌曲列表获取失败");
         }
     }];
+
+}
+-(void)viewDidAppear:(BOOL)animated{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +56,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.service.datas.count;
+    return self.datas.count;
 }
 
 
@@ -59,7 +68,7 @@
         cell=[[MusicListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:resuId];
     }
     
-    MusicModel *model=self.service.datas[indexPath.row];
+    MusicModel *model=self.datas[indexPath.row];
     [cell setupDataWithModel:model];
     
     ////// 此步设置用于实现cell的frame缓存，可以让tableview滑动更加流畅 //////
@@ -88,9 +97,13 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    MusicModel *model=self.datas[indexPath.row];
     AudioPlayerController *audio = [AudioPlayerController audioPlayerController];
-    [audio initWithArray:self.service.datas index:indexPath.row];
+    if (audio.currentModel&&[audio.currentModel.songid longLongValue] == [model.songid longLongValue]) {
+    
+    }else{
+        [audio initWithArray:self.datas index:indexPath.row];
+    }
     [self presentViewController:audio animated:YES completion:nil];
 
 

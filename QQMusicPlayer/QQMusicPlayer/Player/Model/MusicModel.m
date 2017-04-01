@@ -18,12 +18,14 @@
     self.albumpic_big=dic[@"albumpic_big"];
     self.albumpic_small=dic[@"albumpic_small"];
     self.downUrl=dic[@"downUrl"];
-    self.url=dic[@"url"];
     self.singerid=dic[@"singerid"];
     self.singername=dic[@"singername"];
     self.seconds=dic[@"seconds"];
     self.songname=dic[@"songname"];
-    
+    self.url=dic[@"url"];
+    if (!self.url||[self.url isEqualToString:@""]) {
+            self.url=dic[@"m4a"];
+    }
     
     //
     self.music_id=[NSNumber numberWithInteger:[self.songid integerValue]];

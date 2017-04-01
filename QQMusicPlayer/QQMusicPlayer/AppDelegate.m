@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "HMNavigationController.h"
+#import "ViewController.h"
+#import "HotTopCollectionViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    //初始化window
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    ViewController *vc=[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"ViewController"];
+    
+    HMNavigationController *nav = [[HMNavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController=nav;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
